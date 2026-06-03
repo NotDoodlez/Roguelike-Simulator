@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://c1sx7bic4uhdj"]
+
+[ext_resource type="Script" uid="uid://yh2ao5or56lq" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="2_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://bfayuou1hswj7" path="res://gun.tscn" id="3_i3pqv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hqtel"]
+radius = 36.536736
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i3pqv"]
+
+[node name="Player" type="CharacterBody2D" unique_id=429188239]
+script = ExtResource("1_onrkg")
+
+[node name="HappyBoo" parent="." unique_id=1091727253 instance=ExtResource("2_i3pqv")]
+position = Vector2(1.3182068, -0.4937439)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1739548399]
+position = Vector2(1.3182068, -0.4937439)
+shape = SubResource("CircleShape2D_hqtel")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1718951270]
+
+[node name="Gun" parent="." unique_id=1142837101 instance=ExtResource("3_i3pqv")]
+visible = false
+position = Vector2(-1, -37)
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=155474795]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=288046494]
+shape = SubResource("CircleShape2D_i3pqv")
