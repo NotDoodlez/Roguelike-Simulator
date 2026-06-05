@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://0om0wyp0ebg1" path="res://bullet.tscn" id="3_kw0bs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dk5gl"]
-radius = 677.01184
+radius = 546.3305
 
 [node name="Gun" type="Area2D" unique_id=1142837101]
 collision_layer = 0

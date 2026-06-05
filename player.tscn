@@ -8,6 +8,13 @@
 radius = 36.536736
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i3pqv"]
+radius = 42.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3pqv"]
+bg_color = Color(0.36282945, 0.36282948, 0.36282933, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqtel"]
+bg_color = Color(0, 0.8, 0.22352941, 1)
 
 [node name="Player" type="CharacterBody2D" unique_id=429188239]
 script = ExtResource("1_onrkg")
@@ -22,7 +29,6 @@ shape = SubResource("CircleShape2D_hqtel")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1718951270]
 
 [node name="Gun" parent="." unique_id=1142837101 instance=ExtResource("3_i3pqv")]
-visible = false
 position = Vector2(-1, -37)
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=155474795]
@@ -32,3 +38,14 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=288046494]
 shape = SubResource("CircleShape2D_i3pqv")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1702369186]
+unique_name_in_owner = true
+offset_left = -136.0
+offset_top = -146.0
+offset_right = 136.0
+offset_bottom = -118.0
+theme_override_styles/background = SubResource("StyleBoxFlat_i3pqv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hqtel")
+value = 100.0
+show_percentage = false
