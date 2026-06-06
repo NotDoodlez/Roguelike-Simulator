@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bsfc3g1u2pv8s" path="res://game.gd" id="1_u44n3"]
 [ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="1_wbfu4"]
+[ext_resource type="PackedScene" uid="uid://cc77l5mdw6ytc" path="res://pause_menu.tscn" id="2_sb48q"]
 [ext_resource type="PackedScene" uid="uid://fj5nn3s4h3ks" path="res://Pine_tree.tscn" id="2_xkndl"]
 
 [sub_resource type="Curve2D" id="Curve2D_u44n3"]
@@ -105,6 +106,10 @@ text = "Game Over"
 [node name="tree_spawn_timer" type="Timer" parent="." unique_id=654230458]
 wait_time = 0.998
 autostart = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1421573687]
+
+[node name="PauseMenu" parent="CanvasLayer2" unique_id=243132354 instance=ExtResource("2_sb48q")]
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

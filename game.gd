@@ -27,7 +27,7 @@ func _on_player_health_depleted() -> void:
 
 
 func _on_restart_game_pressed() -> void:
-	get_node("Player")
+	get_tree().reload_current_scene()
 	get_tree().paused = false
 	%GameOver.visible = false
 
