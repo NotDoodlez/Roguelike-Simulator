@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cyt3lygcbeo5o"]
+
+[ext_resource type="Texture2D" uid="uid://c6u86e5wuq3nw" path="res://NotDoodlez.jpg" id="1_4u824"]
+
+[node name="DoodlezSplashScreen" type="Node2D" unique_id=1352806941]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=862140311]
+offset_left = -58.0
+offset_top = -36.0
+offset_right = 1963.0
+offset_bottom = 1115.0
+color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1183934310]
+
+[node name="NotDoodlez" type="Sprite2D" parent="Node2D" unique_id=184427663]
+position = Vector2(949, 411.99997)
+scale = Vector2(0.39333335, 0.39333335)
+texture = ExtResource("1_4u824")
+
+[node name="Label" type="Label" parent="Node2D" unique_id=264632143]
+offset_left = 729.0
+offset_top = 789.0
+offset_right = 1196.0
+offset_bottom = 902.0
+theme_override_font_sizes/font_size = 82
+text = "NotDoodlez"

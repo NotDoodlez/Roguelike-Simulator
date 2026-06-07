@@ -1,11 +1,11 @@
-[gd_scene format=3 uid="uid://cc77l5mdw6ytc"]
+[gd_scene format=3 uid="uid://ctj11oh66kpxm"]
 
-[ext_resource type="Shader" uid="uid://bv4s6o2q5rcbi" path="res://pause_menu.gdshader" id="1_hdmo1"]
-[ext_resource type="Script" uid="uid://nf6yctkgadkr" path="res://pause_menu.gd" id="1_nwcfo"]
+[ext_resource type="Script" uid="uid://nf6yctkgadkr" path="res://pause_menu.gd" id="1_bq62m"]
+[ext_resource type="Shader" uid="uid://bv4s6o2q5rcbi" path="res://pause_menu.gdshader" id="2_0ixmx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nwcfo"]
-shader = ExtResource("1_hdmo1")
-shader_parameter/lod = 0.8
+shader = ExtResource("2_0ixmx")
+shader_parameter/lod = 0.0
 
 [sub_resource type="Animation" id="Animation_hdmo1"]
 length = 0.001
@@ -130,7 +130,7 @@ _data = {
 &"blur": SubResource("Animation_nwcfo")
 }
 
-[node name="PauseMenu" type="Control" unique_id=243132354]
+[node name="GameOver" type="Control" unique_id=243132354]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -138,7 +138,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_nwcfo")
+script = ExtResource("1_bq62m")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1854119622]
 material = SubResource("ShaderMaterial_nwcfo")
@@ -169,12 +169,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Resume" type="Button" parent="PanelContainer/VBoxContainer" unique_id=596815123]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 57
-text = "RESUME"
-
 [node name="Restart" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1841442822]
 layout_mode = 2
 theme_override_font_sizes/font_size = 57
@@ -188,6 +182,5 @@ text = "MAIN MENU"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1077123149]
 libraries/ = SubResource("AnimationLibrary_05uyy")
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]

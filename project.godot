@@ -75,7 +75,7 @@ Settings/Show_Tooltips=true
 [application]
 
 config/name="Roguelike Simulator"
-run/main_scene="uid://cm52jwsbkwj67"
+run/main_scene="uid://blmy4mp0bdhmp"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.png"
 

@@ -21,9 +21,6 @@ func _on_timer_timeout() -> void:
 
 
 
-func _on_player_health_depleted() -> void:
-	%GameOver.visible = true   #displays the Game over screen
-	get_tree().paused = true    #pauses the whole game
 
 
 func _on_restart_game_pressed() -> void:
