@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="1_wbfu4"]
 [ext_resource type="PackedScene" uid="uid://cc77l5mdw6ytc" path="res://pause_menu.tscn" id="2_sb48q"]
 [ext_resource type="PackedScene" uid="uid://fj5nn3s4h3ks" path="res://Pine_tree.tscn" id="2_xkndl"]
+[ext_resource type="PackedScene" uid="uid://ctj11oh66kpxm" path="res://Game_Over.tscn" id="5_t88pq"]
 
 [sub_resource type="Curve2D" id="Curve2D_u44n3"]
 _data = {
@@ -110,6 +111,10 @@ autostart = true
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1421573687]
 
 [node name="PauseMenu" parent="CanvasLayer2" unique_id=243132354 instance=ExtResource("2_sb48q")]
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=1992059531]
+
+[node name="GameOver" parent="CanvasLayer3" unique_id=1442516151 instance=ExtResource("5_t88pq")]
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

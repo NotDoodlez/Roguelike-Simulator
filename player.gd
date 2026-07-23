@@ -13,6 +13,8 @@ func _physics_process(delta):
 	else:
 		$HappyBoo.play_idle_animation()
 	
+
+	
 	
 	const DAMAGE_RATE = 5.0
 	var overlapping_mobs = %HurtBox.get_overlapping_bodies()
@@ -21,3 +23,4 @@ func _physics_process(delta):
 		%ProgressBar.value = health
 		if health <= 0.0:
 			health_depleted.emit()
+			$"../CanvasLayer3/GameOver"._on_player_health_depleted()

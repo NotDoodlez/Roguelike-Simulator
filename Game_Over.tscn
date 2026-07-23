@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ctj11oh66kpxm"]
 
-[ext_resource type="Script" uid="uid://nf6yctkgadkr" path="res://pause_menu.gd" id="1_bq62m"]
+[ext_resource type="Script" uid="uid://b3cru0rmoxbqy" path="res://game_over.gd" id="1_5ruhh"]
 [ext_resource type="Shader" uid="uid://bv4s6o2q5rcbi" path="res://pause_menu.gdshader" id="2_0ixmx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nwcfo"]
@@ -138,7 +138,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_bq62m")
+script = ExtResource("1_5ruhh")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1854119622]
 material = SubResource("ShaderMaterial_nwcfo")

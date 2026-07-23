@@ -1,8 +1,73 @@
 [gd_scene format=3 uid="uid://cyt3lygcbeo5o"]
 
-[ext_resource type="Texture2D" uid="uid://c6u86e5wuq3nw" path="res://NotDoodlez.jpg" id="1_4u824"]
+[ext_resource type="Script" uid="uid://cipl4pl3vfcp6" path="res://doodlez_splash_screen.gd" id="1_auq6g"]
+[ext_resource type="Texture2D" uid="uid://cc1tgk3umd2j" path="res://notdoodlezround.png" id="2_auq6g"]
+[ext_resource type="FontFile" uid="uid://b0q28466ns5q2" path="res://Sniglet/Sniglet-Regular.ttf" id="2_ybgkc"]
+
+[sub_resource type="Animation" id="Animation_oys86"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_auq6g"]
+resource_name = "fade_out"
+length = 3.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 3),
+"transitions": PackedFloat32Array(1, 2, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oys86"]
+_data = {
+&"RESET": SubResource("Animation_oys86"),
+&"fade_out": SubResource("Animation_auq6g")
+}
 
 [node name="DoodlezSplashScreen" type="Node2D" unique_id=1352806941]
+script = ExtResource("1_auq6g")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=862140311]
 offset_left = -58.0
@@ -11,17 +76,29 @@ offset_right = 1963.0
 offset_bottom = 1115.0
 color = Color(0, 0, 0, 1)
 
-[node name="Node2D" type="Node2D" parent="." unique_id=1183934310]
+[node name="Logo" type="Node2D" parent="." unique_id=1183934310]
 
-[node name="NotDoodlez" type="Sprite2D" parent="Node2D" unique_id=184427663]
-position = Vector2(949, 411.99997)
-scale = Vector2(0.39333335, 0.39333335)
-texture = ExtResource("1_4u824")
+[node name="NotDoodlez" type="Sprite2D" parent="Logo" unique_id=184427663]
+position = Vector2(978.0001, 416)
+scale = Vector2(0.7250001, 0.7250001)
+texture = ExtResource("2_auq6g")
 
-[node name="Label" type="Label" parent="Node2D" unique_id=264632143]
-offset_left = 729.0
-offset_top = 789.0
-offset_right = 1196.0
-offset_bottom = 902.0
-theme_override_font_sizes/font_size = 82
+[node name="Label" type="Label" parent="Logo" unique_id=264632143]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 663.0
+offset_top = 668.0
+offset_right = 1284.0
+offset_bottom = 819.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_ybgkc")
+theme_override_font_sizes/font_size = 121
 text = "NotDoodlez"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1800642124]
+libraries/ = SubResource("AnimationLibrary_oys86")
+autoplay = &"fade_out"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

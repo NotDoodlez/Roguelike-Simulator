@@ -1,6 +1,8 @@
 extends Control
 
 
+
+
 func _ready() -> void:
 	$AnimationPlayer.play("RESET")
 	hide()
@@ -32,5 +34,5 @@ func _on_main_menu_pressed() -> void:
 	get_tree().quit()
 
 
-func _process(delta: float) -> void:
-	_on_player_health_depleted()
+# func _process(delta: float) -> void:
+	# _on_player_health_depleted()
