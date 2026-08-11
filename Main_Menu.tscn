@@ -1,3 +1,65 @@
 [gd_scene format=3 uid="uid://bckm5d5kkysht"]
 
-[node name="Node2D" type="Node2D" unique_id=2050831263]
+[ext_resource type="FontFile" uid="uid://b14gylvdwlutw" path="res://GrapeSoda.ttf" id="1_m625n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bekt7"]
+bg_color = Color(1, 1, 1, 1)
+corner_detail = 1
+
+[sub_resource type="FontVariation" id="FontVariation_8jhjc"]
+base_font = ExtResource("1_m625n")
+
+[node name="Node2D" type="Control" unique_id=1392971254]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=272292785]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -426.25
+offset_right = 426.25
+offset_bottom = 408.0
+grow_horizontal = 2
+theme_override_constants/separation = 61
+
+[node name="Play Game" type="Button" parent="VBoxContainer" unique_id=1112148282]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.03822695, 0.041128762, 0.039730337, 1)
+theme_override_font_sizes/font_size = 67
+theme_override_styles/normal = SubResource("StyleBoxFlat_bekt7")
+text = "Play Game"
+
+[node name="Options" type="Button" parent="VBoxContainer" unique_id=1206475311]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.03822695, 0.041128762, 0.039730337, 1)
+theme_override_font_sizes/font_size = 67
+theme_override_styles/normal = SubResource("StyleBoxFlat_bekt7")
+text = "Options"
+
+[node name="Quit Game" type="Button" parent="VBoxContainer" unique_id=357010484]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.03822695, 0.041128762, 0.039730337, 1)
+theme_override_font_sizes/font_size = 67
+theme_override_styles/normal = SubResource("StyleBoxFlat_bekt7")
+text = "Quit Game"
+
+[node name="Label" type="Label" parent="." unique_id=1474974841]
+layout_mode = 0
+offset_left = -450.0
+offset_top = -471.0
+offset_right = 433.0
+offset_bottom = -357.0
+theme_override_fonts/font = SubResource("FontVariation_8jhjc")
+theme_override_font_sizes/font_size = 113
+text = "Roguelike Simulator"
