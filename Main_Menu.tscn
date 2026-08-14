@@ -1,11 +1,16 @@
-[gd_scene format=3 uid="uid://bckm5d5kkysht"]
+[gd_scene format=3 uid="uid://baf2e4sr3syuo"]
 
 [ext_resource type="FontFile" uid="uid://b14gylvdwlutw" path="res://GrapeSoda.ttf" id="1_m625n"]
-[ext_resource type="Script" uid="uid://qovxsij6e0j1" path="res://main_menu.gd" id="1_wugcc"]
+[ext_resource type="Script" uid="uid://dklo4kdvavdu6" path="res://main_menu.gd" id="1_wugcc"]
+[ext_resource type="AudioStream" uid="uid://bft4o45ujd00m" path="res://Sounds/Week 18 - Distant Skyline NIGHT DRIVE.ogg" id="3_dnfjo"]
+[ext_resource type="AudioStream" uid="uid://c07bf4c7abqmi" path="res://Sounds/Click Sound.mp3" id="4_dnfjo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bekt7"]
 bg_color = Color(1, 1, 1, 1)
 corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_auq6g"]
+bg_color = Color(0.43959036, 0.42117712, 0.42118785, 1)
 
 [sub_resource type="FontVariation" id="FontVariation_8jhjc"]
 base_font = ExtResource("1_m625n")
@@ -27,10 +32,11 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -426.25
+offset_top = -85.0
 offset_right = 426.25
-offset_bottom = 408.0
+offset_bottom = 466.0
 grow_horizontal = 2
-theme_override_constants/separation = 61
+theme_override_constants/separation = 44
 
 [node name="Play Game" type="Button" parent="VBoxContainer" unique_id=1112148282]
 layout_mode = 2
@@ -38,6 +44,7 @@ size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.03822695, 0.041128762, 0.039730337, 1)
 theme_override_font_sizes/font_size = 67
 theme_override_styles/normal = SubResource("StyleBoxFlat_bekt7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_auq6g")
 text = "Play Game"
 
 [node name="Options" type="Button" parent="VBoxContainer" unique_id=1206475311]
@@ -46,14 +53,25 @@ size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.03822695, 0.041128762, 0.039730337, 1)
 theme_override_font_sizes/font_size = 67
 theme_override_styles/normal = SubResource("StyleBoxFlat_bekt7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_auq6g")
 text = "Options"
 
-[node name="Quit Game" type="Button" parent="VBoxContainer" unique_id=357010484]
+[node name="Credits" type="Button" parent="VBoxContainer" unique_id=357010484]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.03822695, 0.041128762, 0.039730337, 1)
 theme_override_font_sizes/font_size = 67
 theme_override_styles/normal = SubResource("StyleBoxFlat_bekt7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_auq6g")
+text = "Credits"
+
+[node name="Quit Game" type="Button" parent="VBoxContainer" unique_id=471400829]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.03822695, 0.041128762, 0.039730337, 1)
+theme_override_font_sizes/font_size = 67
+theme_override_styles/normal = SubResource("StyleBoxFlat_bekt7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_auq6g")
 text = "Quit Game"
 
 [node name="Label" type="Label" parent="." unique_id=1474974841]
@@ -66,6 +84,16 @@ theme_override_fonts/font = SubResource("FontVariation_8jhjc")
 theme_override_font_sizes/font_size = 113
 text = "Roguelike Simulator"
 
+[node name="Main Menu background music" type="AudioStreamPlayer2D" parent="." unique_id=1859680496]
+stream = ExtResource("3_dnfjo")
+parameters/looping = true
+
+[node name="click sound" type="AudioStreamPlayer2D" parent="." unique_id=1392169869]
+position = Vector2(-426.25, 361)
+stream = ExtResource("4_dnfjo")
+volume_db = 21.698
+
 [connection signal="pressed" from="VBoxContainer/Play Game" to="." method="_on_play_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit Game" to="." method="_on_quit_game_pressed"]

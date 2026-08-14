@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cyt3lygcbeo5o"]
 
-[ext_resource type="Script" uid="uid://cipl4pl3vfcp6" path="res://doodlez_splash_screen.gd" id="1_auq6g"]
+[ext_resource type="Script" uid="uid://dcbk10o23ps2u" path="res://doodlez_splash_screen.gd" id="1_auq6g"]
 [ext_resource type="Texture2D" uid="uid://cc1tgk3umd2j" path="res://notdoodlezround.png" id="2_auq6g"]
 [ext_resource type="FontFile" uid="uid://b0q28466ns5q2" path="res://Sniglet/Sniglet-Regular.ttf" id="2_ybgkc"]
 

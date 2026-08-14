@@ -1,5 +1,7 @@
 extends Control
 
+@onready var click = $"click sound"
+
 func _ready() -> void:
 	$AnimationPlayer.play("RESET")
 	hide()
@@ -31,6 +33,8 @@ func _on_restart_pressed() -> void:
 
 
 func _on_main_menu_pressed() -> void:
+	get_tree().paused = false
+	await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_file("res://Main_Menu.tscn")
 
 

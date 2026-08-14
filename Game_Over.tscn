@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://ctj11oh66kpxm"]
 
-[ext_resource type="Script" uid="uid://b3cru0rmoxbqy" path="res://game_over.gd" id="1_5ruhh"]
+[ext_resource type="Script" uid="uid://dqpi2c0x814qk" path="res://game_over.gd" id="1_5ruhh"]
 [ext_resource type="Shader" uid="uid://bv4s6o2q5rcbi" path="res://pause_menu.gdshader" id="2_0ixmx"]
+[ext_resource type="AudioStream" uid="uid://c07bf4c7abqmi" path="res://Sounds/Click Sound.mp3" id="3_5wgwi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nwcfo"]
 shader = ExtResource("2_0ixmx")
@@ -179,8 +180,17 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 57
 text = "MAIN MENU"
 
+[node name="Quit Game" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1203444033]
+layout_mode = 2
+theme_override_font_sizes/font_size = 57
+text = "QUIT GAME"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1077123149]
 libraries/ = SubResource("AnimationLibrary_05uyy")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1332586517]
+stream = ExtResource("3_5wgwi")
+
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Quit Game" to="." method="_on_quit_game_pressed"]

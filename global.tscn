@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dx6ptc5ge3xa6"]
+
+[ext_resource type="AudioStream" uid="uid://c07bf4c7abqmi" path="res://Sounds/Click Sound.mp3" id="2_2wtbm"]
+
+[node name="global" type="Node2D" unique_id=1527505688]
+
+[node name="click moment" type="AudioStreamPlayer2D" parent="." unique_id=949141346]
+stream = ExtResource("2_2wtbm")
+volume_db = 21.0
