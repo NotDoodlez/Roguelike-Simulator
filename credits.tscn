@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://dwrcgefe0vnmm"]
+
+[ext_resource type="Texture2D" uid="uid://du46okchlxqww" path="res://Main menu BG.jpg" id="1_nm7lk"]
+[ext_resource type="FontFile" uid="uid://b14gylvdwlutw" path="res://GrapeSoda.ttf" id="2_c1t8d"]
+
+[node name="Credits" type="Control" unique_id=8171384]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainMenuBg" type="Sprite2D" parent="." unique_id=1319831646]
+position = Vector2(6.1035156e-05, -17.25)
+scale = Vector2(0.28, 0.29062498)
+texture = ExtResource("1_nm7lk")
+
+[node name="Credits" type="Label" parent="." unique_id=373425557]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -242.0
+offset_top = -522.0
+offset_right = 219.0
+offset_bottom = -364.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_c1t8d")
+theme_override_font_sizes/font_size = 157
+text = "Credits"
+
+[node name="creditting - 1" type="Label" parent="." unique_id=1282993927]
+layout_mode = 0
+offset_left = -924.0
+offset_top = -283.0
+offset_right = 921.0
+offset_bottom = 402.0
+theme_override_fonts/font = ExtResource("2_c1t8d")
+theme_override_font_sizes/font_size = 82
+text = "Game made by - Atharv Dhiman (NotDoodlez)
+Playtesting and small bug fixing  - Rigo (Poldotts)
+Game Engine - Godot 4.7.1 Stable
+Main menu music - Abstraction and Tallbeard Studios
+Click SFX - Nathan Gibson
+Godot Splash Screen asset - MOSTLY MAD PRODUCTIONS
+Game Assets - GDQuest
+Main Menu Vector image - Vecteezy.com"

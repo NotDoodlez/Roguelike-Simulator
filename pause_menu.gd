@@ -1,6 +1,8 @@
 extends Control
 
-@onready var click = $"click sound"
+func click_sound():
+	var click = Global.get_node("click moment")
+	click.play()
 
 func _ready() -> void:
 	$AnimationPlayer.play("RESET")
@@ -24,16 +26,21 @@ func testEsc():
 
 
 func _on_resume_pressed() -> void:
+	click_sound()
+	await get_tree().create_timer(0.1).timeout
 	resume()
 
 
 func _on_restart_pressed() -> void:
 	resume()
+	click_sound()
+	await get_tree().create_timer(0.1).timeout
 	get_tree().reload_current_scene()
 
 
 func _on_main_menu_pressed() -> void:
 	get_tree().paused = false
+	click_sound()
 	await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_file("res://Main_Menu.tscn")
 

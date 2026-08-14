@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://b14gylvdwlutw" path="res://GrapeSoda.ttf" id="1_m625n"]
 [ext_resource type="Script" uid="uid://dklo4kdvavdu6" path="res://main_menu.gd" id="1_wugcc"]
+[ext_resource type="Texture2D" uid="uid://du46okchlxqww" path="res://Main menu BG.jpg" id="2_257up"]
 [ext_resource type="AudioStream" uid="uid://bft4o45ujd00m" path="res://Sounds/Week 18 - Distant Skyline NIGHT DRIVE.ogg" id="3_dnfjo"]
 [ext_resource type="AudioStream" uid="uid://c07bf4c7abqmi" path="res://Sounds/Click Sound.mp3" id="4_dnfjo"]
 
@@ -25,6 +26,11 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wugcc")
+
+[node name="MainMenuBg" type="Sprite2D" parent="." unique_id=1898534166]
+position = Vector2(6.1035156e-05, -17.25)
+scale = Vector2(0.28, 0.29062498)
+texture = ExtResource("2_257up")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=272292785]
 layout_mode = 1

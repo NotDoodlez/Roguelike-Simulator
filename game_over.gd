@@ -3,7 +3,7 @@ extends Control
 func click_sound():
 	var click = Global.get_node("click moment")
 	click.play()
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(0.1).timeout
 
 
 func _ready() -> void:

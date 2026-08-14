@@ -33,4 +33,4 @@ func _on_quit_game_pressed() -> void:
 func _on_credits_pressed() -> void:
 	click.play()
 	await get_tree().create_timer(0.1).timeout
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://credits.tscn")
