@@ -5,7 +5,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nwcfo"]
 shader = ExtResource("1_hdmo1")
-shader_parameter/lod = 0.8
+shader_parameter/lod = 0.0
 
 [sub_resource type="Animation" id="Animation_hdmo1"]
 length = 0.001

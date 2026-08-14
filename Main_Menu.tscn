@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bckm5d5kkysht"]
 
 [ext_resource type="FontFile" uid="uid://b14gylvdwlutw" path="res://GrapeSoda.ttf" id="1_m625n"]
+[ext_resource type="Script" uid="uid://qovxsij6e0j1" path="res://main_menu.gd" id="1_wugcc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bekt7"]
 bg_color = Color(1, 1, 1, 1)
@@ -9,7 +10,7 @@ corner_detail = 1
 [sub_resource type="FontVariation" id="FontVariation_8jhjc"]
 base_font = ExtResource("1_m625n")
 
-[node name="Node2D" type="Control" unique_id=1392971254]
+[node name="Main Menu" type="Control" unique_id=1392971254]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -18,6 +19,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wugcc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=272292785]
 layout_mode = 1
@@ -63,3 +65,7 @@ offset_bottom = -357.0
 theme_override_fonts/font = SubResource("FontVariation_8jhjc")
 theme_override_font_sizes/font_size = 113
 text = "Roguelike Simulator"
+
+[connection signal="pressed" from="VBoxContainer/Play Game" to="." method="_on_play_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit Game" to="." method="_on_quit_game_pressed"]

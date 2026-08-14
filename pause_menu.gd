@@ -31,7 +31,7 @@ func _on_restart_pressed() -> void:
 
 
 func _on_main_menu_pressed() -> void:
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://Main_Menu.tscn")
 
 
 func _process(delta: float) -> void:
