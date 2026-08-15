@@ -1,6 +1,9 @@
 extends Node2D
 
+@onready var gamebg = $"Player/Path2D/Game bg"
 
+func _ready() -> void:
+	gamebg.play()
 
 func spawn_mob():
 	var new_mob = preload("res://mob.tscn").instantiate()

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cc77l5mdw6ytc" path="res://pause_menu.tscn" id="2_sb48q"]
 [ext_resource type="PackedScene" uid="uid://fj5nn3s4h3ks" path="res://Pine_tree.tscn" id="2_xkndl"]
 [ext_resource type="PackedScene" uid="uid://ctj11oh66kpxm" path="res://Game_Over.tscn" id="5_t88pq"]
+[ext_resource type="AudioStream" uid="uid://cauid1u172ycq" path="res://Sounds/Week 15 - Sunburn SPF 3000.ogg" id="6_r0x5m"]
 
 [sub_resource type="Curve2D" id="Curve2D_u44n3"]
 _data = {
@@ -37,6 +38,13 @@ unique_name_in_owner = true
 position = Vector2(-111.99999, -113)
 rotation = 3.1374125
 progress = 6882.0586
+
+[node name="Game bg" type="AudioStreamPlayer2D" parent="Player/Path2D" unique_id=945387879]
+position = Vector2(966.0001, 546.00006)
+rotation = 3.1374125
+scale = Vector2(0.9999998, 0.9999998)
+stream = ExtResource("6_r0x5m")
+parameters/looping = true
 
 [node name="Pine_Tree" parent="." unique_id=1163847818 instance=ExtResource("2_xkndl")]
 position = Vector2(417, 579)

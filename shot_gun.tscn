@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://mf6s8kgsdnul"]
+
+[ext_resource type="Script" uid="uid://curyji6qbi1tt" path="res://shot_gun.gd" id="1_dwauv"]
+[ext_resource type="Texture2D" uid="uid://dpqglv5ri817h" path="res://shotgun.png" id="2_syoir"]
+[ext_resource type="PackedScene" uid="uid://0om0wyp0ebg1" path="res://bullet.tscn" id="3_syoir"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jw6ls"]
+radius = 546.3305
+
+[node name="Shot Gun" type="Area2D" unique_id=267911526]
+script = ExtResource("1_dwauv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1142692121]
+shape = SubResource("CircleShape2D_jw6ls")
+
+[node name="WeaponPivot" type="Marker2D" parent="." unique_id=1710286053]
+
+[node name="Shotgun" type="Sprite2D" parent="WeaponPivot" unique_id=1417448854]
+position = Vector2(153.00006, 3)
+scale = Vector2(0.40517238, 0.4051724)
+texture = ExtResource("2_syoir")
+
+[node name="1st Bullet" type="Marker2D" parent="WeaponPivot/Shotgun" unique_id=360732449]
+position = Vector2(199.9148, -56.76599)
+
+[node name="2nd Bullet" type="Marker2D" parent="WeaponPivot/Shotgun" unique_id=911966042]
+position = Vector2(199.91476, -27.148933)
+scale = Vector2(1.0000001, 1)
+
+[node name="Bullet" parent="WeaponPivot/Shotgun" unique_id=1083617340 instance=ExtResource("3_syoir")]
+
+[node name="Timer" type="Timer" parent="." unique_id=1731139693]
+wait_time = 0.3
+autostart = true
