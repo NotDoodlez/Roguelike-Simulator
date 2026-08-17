@@ -7,3 +7,4 @@
 [node name="click moment" type="AudioStreamPlayer2D" parent="." unique_id=949141346]
 stream = ExtResource("2_2wtbm")
 volume_db = 21.0
+bus = &"SFX"

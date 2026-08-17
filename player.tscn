@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://c1sx7bic4uhdj"]
+[gd_scene format=3 uid="uid://d2dh3n0ppa7v0"]
 
-[ext_resource type="Script" uid="uid://yh2ao5or56lq" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://ct2qiuddly1ym" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="2_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://mf6s8kgsdnul" path="res://shot_gun.tscn" id="3_hqtel"]
 [ext_resource type="PackedScene" uid="uid://bfayuou1hswj7" path="res://gun.tscn" id="3_i3pqv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hqtel"]
@@ -28,7 +29,10 @@ shape = SubResource("CircleShape2D_hqtel")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1718951270]
 
+[node name="Shotgun" parent="." unique_id=267911526 instance=ExtResource("3_hqtel")]
+
 [node name="Gun" parent="." unique_id=1142837101 instance=ExtResource("3_i3pqv")]
+visible = false
 position = Vector2(-1, -37)
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=155474795]

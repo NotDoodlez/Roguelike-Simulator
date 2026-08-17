@@ -3,8 +3,12 @@
 [ext_resource type="FontFile" uid="uid://b14gylvdwlutw" path="res://GrapeSoda.ttf" id="1_m625n"]
 [ext_resource type="Script" uid="uid://dklo4kdvavdu6" path="res://main_menu.gd" id="1_wugcc"]
 [ext_resource type="Texture2D" uid="uid://du46okchlxqww" path="res://Main menu BG.jpg" id="2_257up"]
+[ext_resource type="Script" uid="uid://dw57x68a63sd1" path="res://title_screen.gd" id="2_tu7k8"]
 [ext_resource type="AudioStream" uid="uid://bft4o45ujd00m" path="res://Sounds/Week 18 - Distant Skyline NIGHT DRIVE.ogg" id="3_dnfjo"]
 [ext_resource type="AudioStream" uid="uid://c07bf4c7abqmi" path="res://Sounds/Click Sound.mp3" id="4_dnfjo"]
+[ext_resource type="PackedScene" uid="uid://dwrcgefe0vnmm" path="res://credits.tscn" id="6_3mro0"]
+[ext_resource type="PackedScene" uid="uid://m8kfoymhnyjr" path="res://options.tscn" id="8_5cvai"]
+[ext_resource type="PackedScene" uid="uid://cjqy5ortcorqe" path="res://shop.tscn" id="9_domf7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bekt7"]
 bg_color = Color(1, 1, 1, 1)
@@ -27,24 +31,45 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wugcc")
 
-[node name="MainMenuBg" type="Sprite2D" parent="." unique_id=1898534166]
-position = Vector2(6.1035156e-05, -17.25)
+[node name="Title Screen" type="Control" parent="." unique_id=1599558680]
+anchors_preset = 0
+offset_left = -426.25
+offset_top = 212.0
+offset_right = -386.25
+offset_bottom = 252.0
+script = ExtResource("2_tu7k8")
+
+[node name="MainMenuBg" type="Sprite2D" parent="Title Screen" unique_id=1898534166]
+position = Vector2(426.25006, -229.25)
 scale = Vector2(0.28, 0.29062498)
 texture = ExtResource("2_257up")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=272292785]
+[node name="Shop Button" type="Button" parent="Title Screen" unique_id=1056324729]
+layout_mode = 0
+offset_left = 978.25
+offset_top = -667.0
+offset_right = 1320.25
+offset_bottom = -575.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.03822695, 0.041128762, 0.039730337, 1)
+theme_override_font_sizes/font_size = 67
+theme_override_styles/normal = SubResource("StyleBoxFlat_bekt7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_auq6g")
+text = "Shop"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Title Screen" unique_id=272292785]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -426.25
-offset_top = -85.0
-offset_right = 426.25
-offset_bottom = 466.0
+offset_left = -20.0
+offset_top = -297.0
+offset_right = 832.5
+offset_bottom = 254.0
 grow_horizontal = 2
 theme_override_constants/separation = 44
 
-[node name="Play Game" type="Button" parent="VBoxContainer" unique_id=1112148282]
+[node name="Play Game" type="Button" parent="Title Screen/VBoxContainer" unique_id=1112148282]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.03822695, 0.041128762, 0.039730337, 1)
@@ -53,7 +78,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_bekt7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_auq6g")
 text = "Play Game"
 
-[node name="Options" type="Button" parent="VBoxContainer" unique_id=1206475311]
+[node name="Options" type="Button" parent="Title Screen/VBoxContainer" unique_id=1206475311]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.03822695, 0.041128762, 0.039730337, 1)
@@ -62,7 +87,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_bekt7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_auq6g")
 text = "Options"
 
-[node name="Credits" type="Button" parent="VBoxContainer" unique_id=357010484]
+[node name="Credits" type="Button" parent="Title Screen/VBoxContainer" unique_id=357010484]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.03822695, 0.041128762, 0.039730337, 1)
@@ -71,7 +96,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_bekt7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_auq6g")
 text = "Credits"
 
-[node name="Quit Game" type="Button" parent="VBoxContainer" unique_id=471400829]
+[node name="Quit Game" type="Button" parent="Title Screen/VBoxContainer" unique_id=471400829]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.03822695, 0.041128762, 0.039730337, 1)
@@ -90,16 +115,31 @@ theme_override_fonts/font = SubResource("FontVariation_8jhjc")
 theme_override_font_sizes/font_size = 113
 text = "Roguelike Simulator"
 
-[node name="Main Menu background music" type="AudioStreamPlayer2D" parent="." unique_id=1859680496]
-stream = ExtResource("3_dnfjo")
-parameters/looping = true
-
 [node name="click sound" type="AudioStreamPlayer2D" parent="." unique_id=1392169869]
 position = Vector2(-426.25, 361)
 stream = ExtResource("4_dnfjo")
 volume_db = 21.698
+bus = &"SFX"
 
-[connection signal="pressed" from="VBoxContainer/Play Game" to="." method="_on_play_game_pressed"]
-[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit Game" to="." method="_on_quit_game_pressed"]
+[node name="Main Menu bg" type="AudioStreamPlayer2D" parent="." unique_id=1429485456]
+stream = ExtResource("3_dnfjo")
+bus = &"Music"
+parameters/looping = true
+
+[node name="Credits" parent="." unique_id=8171384 instance=ExtResource("6_3mro0")]
+visible = false
+layout_mode = 1
+
+[node name="Options" parent="." unique_id=2033965062 instance=ExtResource("8_5cvai")]
+visible = false
+layout_mode = 1
+
+[node name="Shop" parent="." unique_id=2141373569 instance=ExtResource("9_domf7")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="Title Screen/Shop Button" to="." method="_on_shop_button_pressed"]
+[connection signal="pressed" from="Title Screen/VBoxContainer/Play Game" to="." method="_on_play_game_pressed"]
+[connection signal="pressed" from="Title Screen/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Title Screen/VBoxContainer/Credits" to="Credits" method="_on_credits_pressed"]
+[connection signal="pressed" from="Title Screen/VBoxContainer/Quit Game" to="." method="_on_quit_game_pressed"]

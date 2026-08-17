@@ -1,11 +1,12 @@
 extends Control
 
-@onready var bg_music = $"Main Menu background music"
+@onready var mainmenumusic = $"Main Menu bg"
 @onready var click = $"click sound"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	bg_music.play()
+	mainmenumusic.play()
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,7 +22,8 @@ func _on_play_game_pressed() -> void:
 func _on_options_pressed() -> void:
 	click.play()
 	await get_tree().create_timer(0.1).timeout
-	pass # Replace with function body.
+	$"Title Screen".visible = false
+	$Options.visible = true
 
 
 func _on_quit_game_pressed() -> void:
@@ -33,4 +35,12 @@ func _on_quit_game_pressed() -> void:
 func _on_credits_pressed() -> void:
 	click.play()
 	await get_tree().create_timer(0.1).timeout
-	get_tree().change_scene_to_file("res://credits.tscn")
+	get_tree().change_scene_to_file("$Credits")
+	hide()
+
+
+func _on_shop_button_pressed() -> void:
+	click.play()
+	await get_tree().create_timer(0.1).timeout
+	$"Title Screen".visible = false
+	$Shop.visible = true

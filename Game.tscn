@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d2dh3n0ppa7v0" path="res://player.tscn" id="1_wbfu4"]
 [ext_resource type="PackedScene" uid="uid://cc77l5mdw6ytc" path="res://pause_menu.tscn" id="2_sb48q"]
 [ext_resource type="PackedScene" uid="uid://fj5nn3s4h3ks" path="res://Pine_tree.tscn" id="2_xkndl"]
+[ext_resource type="Script" uid="uid://ca2qfuwrecgty" path="res://score_counter.gd" id="3_3mrqo"]
 [ext_resource type="PackedScene" uid="uid://ctj11oh66kpxm" path="res://Game_Over.tscn" id="5_t88pq"]
 [ext_resource type="AudioStream" uid="uid://cauid1u172ycq" path="res://Sounds/Week 15 - Sunburn SPF 3000.ogg" id="6_r0x5m"]
 
@@ -12,6 +13,8 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -112, -113, 0, 0, 0, 0, -112, 1171, 0, 0, 0, 0, 2044, 1167, 0, 0, 0, 0, 2041, -122, 0, 0, 0, 0, -112, -113)
 }
 point_count = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlew8"]
 
 [node name="Game" type="Node2D" unique_id=1710862243]
 y_sort_enabled = true
@@ -38,6 +41,16 @@ unique_name_in_owner = true
 position = Vector2(-111.99999, -113)
 rotation = 3.1374125
 progress = 6882.0586
+
+[node name="Score_counter" type="Label" parent="Player/Path2D" unique_id=1139295667]
+offset_left = 1529.0
+offset_top = 45.0
+offset_right = 1824.0
+offset_bottom = 140.0
+theme_override_font_sizes/font_size = 69
+theme_override_styles/normal = SubResource("StyleBoxFlat_vlew8")
+text = "Score: 0"
+script = ExtResource("3_3mrqo")
 
 [node name="Game bg" type="AudioStreamPlayer2D" parent="Player/Path2D" unique_id=945387879]
 position = Vector2(966.0001, 546.00006)

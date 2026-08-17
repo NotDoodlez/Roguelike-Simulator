@@ -11,6 +11,8 @@ func _ready() -> void:
 func resume():
 	get_tree().paused = false
 	$AnimationPlayer.play_backwards("blur")
+	await get_tree().create_timer(0.3).timeout
+	hide()
 
 func pause():
 	get_tree().paused = true

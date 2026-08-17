@@ -81,7 +81,10 @@ config/icon="res://icon.png"
 
 [autoload]
 
+AudioPlayer="*uid://dseg5r0y8teyx"
 Global="*uid://dx6ptc5ge3xa6"
+Points="*uid://b3853lc7uqvlg"
+ScoreCounter="*uid://ca2qfuwrecgty"
 
 [display]
 

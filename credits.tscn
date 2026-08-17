@@ -1,7 +1,15 @@
 [gd_scene format=3 uid="uid://dwrcgefe0vnmm"]
 
+[ext_resource type="Script" uid="uid://d0row21boy48l" path="res://credits.gd" id="1_g4wvt"]
 [ext_resource type="Texture2D" uid="uid://du46okchlxqww" path="res://Main menu BG.jpg" id="1_nm7lk"]
 [ext_resource type="FontFile" uid="uid://b14gylvdwlutw" path="res://GrapeSoda.ttf" id="2_c1t8d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pjc1l"]
+bg_color = Color(1, 1, 1, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j6beo"]
+bg_color = Color(0.43959036, 0.42117712, 0.42118785, 1)
 
 [node name="Credits" type="Control" unique_id=8171384]
 layout_mode = 3
@@ -12,6 +20,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_g4wvt")
 
 [node name="MainMenuBg" type="Sprite2D" parent="." unique_id=1319831646]
 position = Vector2(6.1035156e-05, -17.25)
@@ -50,3 +59,18 @@ Click SFX - Nathan Gibson
 Godot Splash Screen asset - MOSTLY MAD PRODUCTIONS
 Game Assets - GDQuest
 Main Menu Vector image - Vecteezy.com"
+
+[node name="Back" type="Button" parent="." unique_id=942786147]
+layout_mode = 0
+offset_left = -934.0
+offset_top = -522.0
+offset_right = -592.0
+offset_bottom = -430.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.03822695, 0.041128762, 0.039730337, 1)
+theme_override_font_sizes/font_size = 67
+theme_override_styles/normal = SubResource("StyleBoxFlat_pjc1l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j6beo")
+text = "<- Back"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
