@@ -41,6 +41,10 @@ But don't worry, if you dont know how to use git or are scared of cmd, then just
 
 ![Github Desktop Step2](<github desktop step 2 SS.png>)
 
+## AI use
+
+This project does not contain any part that is created by generative AI according to my knowledge. All code is either made by NotDoodlez, Poldotts, Online tutorials, godot documentation or people on the internet who had the same problem as me.
+
 ## Conclusion
 
 Thank you for visiting my page and reading this all the way through, and if any of this piques your interest please do pay a visit to my game on itch.io. 
