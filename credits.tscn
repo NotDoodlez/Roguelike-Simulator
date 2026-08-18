@@ -57,7 +57,7 @@ Game Engine - Godot 4.7.1 Stable
 Main menu music - Abstraction and Tallbeard Studios
 Click SFX - Nathan Gibson
 Godot Splash Screen asset - MOSTLY MAD PRODUCTIONS
-Game Assets - GDQuest
+Game Assets - GDQuest, Kay Lousberg, BlauKeks
 Main Menu Vector image - Vecteezy.com"
 
 [node name="Back" type="Button" parent="." unique_id=942786147]

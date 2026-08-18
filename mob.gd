@@ -29,3 +29,14 @@ func take_damage():
 		var smoke = SMOKE_SCENE.instantiate()
 		get_parent().add_child(smoke)
 		smoke.global_position = global_position
+		var drop_roll = randf()
+		if drop_roll <= 0.5:
+			spawn_banana()
+		
+
+func spawn_banana() -> void:
+	const BANANA_SCENE = preload("res://banana.tscn")
+	var new_banana = BANANA_SCENE.instantiate()
+	
+	new_banana.global_position = global_position
+	get_tree().root.add_child(new_banana)

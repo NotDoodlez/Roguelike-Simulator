@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cqd8jfyeb5ji1"]
+
+[ext_resource type="Texture2D" uid="uid://d2qmw52lrhe6c" path="res://Banana_Single.png" id="1_mb6cj"]
+[ext_resource type="Script" uid="uid://b3xyrxtaq7trc" path="res://banana.gd" id="1_s1qo3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vlew8"]
+radius = 32.999992
+height = 95.99999
+
+[node name="Banana" type="Area2D" unique_id=1679504806]
+script = ExtResource("1_s1qo3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=578415699]
+position = Vector2(22, 26)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("CapsuleShape2D_vlew8")
+
+[node name="BananaSingle" type="Sprite2D" parent="." unique_id=665155365]
+position = Vector2(24, 25)
+scale = Vector2(0.81, 0.81)
+texture = ExtResource("1_mb6cj")
