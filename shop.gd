@@ -53,8 +53,8 @@ func _on_shotgun_button_pressed() -> void:
 	if "Shotgun" in Points.unlocked_weapon:
 		Points.equipped_weapon = "Shotgun"
 	else:
-		if Points.points >= 2:
-			Points.points -= 2
+		if Points.points >= 300:
+			Points.points -= 300
 			Points.unlocked_weapon.append("Shotgun")
 			Points.equipped_weapon = "Shotgun"
 		else:

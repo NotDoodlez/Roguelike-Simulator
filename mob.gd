@@ -25,7 +25,6 @@ func take_damage():
 	if health == 0:
 		queue_free()
 		ScoreCounter.add_point()
-		print (Points.points)
 		const SMOKE_SCENE = preload("res://smoke_explosion/smoke_explosion.tscn")
 		var smoke = SMOKE_SCENE.instantiate()
 		get_parent().add_child(smoke)
