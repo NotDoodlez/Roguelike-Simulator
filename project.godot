@@ -79,6 +79,10 @@ run/main_scene="uid://blmy4mp0bdhmp"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.png"
 
+[audio]
+
+general/default_playback_type.web=0
+
 [autoload]
 
 AudioPlayer="*uid://dseg5r0y8teyx"
