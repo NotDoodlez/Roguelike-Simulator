@@ -19,4 +19,14 @@ Press ([this link](https://notdoodlez.itch.io/roguelike-simulator)) to directly 
 ### Godot Installation way
 
 1. Go to the top of this repository and click on code and copy the link shown for https
+
 ![Github clone 1st step](<github clone SS.png>)
+
+If you already have git, then the next step is to go into ur cmd and type out
+```sh
+git clone https://notdoodlez.itch.io/roguelike-simulator
+```
+
+![cmd clone ss](<cmd clone ss.png>)
+
+But don't worry, if you dont know how to use git or are scared of cmd, then just use the github desktop app.
