@@ -1,6 +1,8 @@
 # Roguelike Simulator 
 
-This is my first godot project made for Horizons. This is a simple roguelike simulator type game where the player has to kill slimes to earn points, eat bananas and buy upgrades with those points in the shop. The only available gun right now are the pistol (which is free) and the shotgun (which costs 300 points). This project was made for me to learn godot and learn how to submit my own projects so I could be ready for game jams in the future. Hence, this project has heavily relied on premade assets and tutorials.
+This is my first godot project made for Horizons. This is a simple roguelike simulator type game where the player has to kill slimes to earn points, eat bananas and buy upgrades with those points in the shop. The only available gun right now are the pistol (which is free) and the shotgun (which costs 300 points). This project also contains a full main menu which allows you to see the credits, audio options, shop, play game and allows you to quit the game too. This project was made for me to learn godot and learn how to submit my own projects so I could be ready for game jams in the future. Hence, this project has heavily relied on premade assets and tutorials.
+
+This project was made fully in Godot 4.7.1 stable.
 
 ![Roguelike SS 1](<Roguelike SS 1.png>)
 ![Roguelike SS 2](<Roguelike SS 2.png>)
@@ -38,3 +40,7 @@ But don't worry, if you dont know how to use git or are scared of cmd, then just
 2. Finally, press URL at the top and paste the link you copied in github to the app. Then select the folder you want to save it to and finally press clone.
 
 ![Github Desktop Step2](<github desktop step 2 SS.png>)
+
+## Conclusion
+
+Thank you for visiting my page and reading this all the way through, and if any of this piques your interest please do pay a visit to my game on itch.io. 
