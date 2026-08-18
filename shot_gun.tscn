@@ -30,5 +30,7 @@ scale = Vector2(1.0000001, 1)
 [node name="Bullet" parent="WeaponPivot/Shotgun" unique_id=1083617340 instance=ExtResource("3_syoir")]
 
 [node name="Timer" type="Timer" parent="." unique_id=1731139693]
-wait_time = 0.3
+wait_time = 0.45
 autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

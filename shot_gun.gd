@@ -30,12 +30,12 @@ func shoot():
 	
 	const BULLET = preload("res://bullet.tscn")
 	var bullet1 = BULLET.instantiate()
-	bullet1.global_position = %"1st Bullet".global_position
-	bullet1.global_rotation = %"1st Bullet".global_rotation
+	bullet1.global_position = $"WeaponPivot/Shotgun/1st Bullet".global_position
+	bullet1.global_rotation = $"WeaponPivot/Shotgun/1st Bullet".global_rotation
 
 	var bullet2 = BULLET.instantiate()
-	bullet2.global_position = %"2nd Bullet".global_position
-	bullet2.global_rotation = %"2nd Bullet".global_rotation
+	bullet2.global_position = $"WeaponPivot/Shotgun/2nd Bullet".global_position
+	bullet2.global_rotation = $"WeaponPivot/Shotgun/2nd Bullet".global_rotation
 	
 	get_tree().root.add_child(bullet1)
 	get_tree().root.add_child(bullet2)
