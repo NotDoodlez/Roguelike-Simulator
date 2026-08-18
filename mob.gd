@@ -30,7 +30,7 @@ func take_damage():
 		get_parent().add_child(smoke)
 		smoke.global_position = global_position
 		var drop_roll = randf()
-		if drop_roll <= 0.5:
+		if drop_roll <= 0.02:
 			spawn_banana()
 		
 
