@@ -31,8 +31,11 @@ func take_damage():
 		smoke.global_position = global_position
 		var drop_roll = randf()
 		if drop_roll <= 0.02:
-			spawn_banana()
-		
+			var item_choice = randi_range(0,1)
+			if item_choice == 0:
+				spawn_banana()
+			else:
+				spawn_bolt()
 
 func spawn_banana() -> void:
 	const BANANA_SCENE = preload("res://banana.tscn")
@@ -40,3 +43,10 @@ func spawn_banana() -> void:
 	
 	new_banana.global_position = global_position
 	get_tree().root.add_child(new_banana)
+
+func spawn_bolt():
+	const bolt = preload("res://lightning_bolt.tscn")
+	var new_bolt = bolt.instantiate()
+	
+	new_bolt.global_position = global_position
+	get_tree().root.add_child(new_bolt)

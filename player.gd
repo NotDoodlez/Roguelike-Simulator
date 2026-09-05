@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 signal health_depleted
 
+var speed = 600.0
 var health = 100.0
 
 func _ready() -> void:
@@ -49,7 +50,7 @@ func deactivate_weapon(weapon: Node) -> void:
 
 func _physics_process(delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	velocity = direction * 600
+	velocity = direction * speed
 	move_and_slide()
 	if velocity.length() > 0.0:
 		$HappyBoo.play_walk_animation()

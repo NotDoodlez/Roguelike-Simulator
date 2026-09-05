@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bysdskoy0c0ao"]
+
+[ext_resource type="Script" uid="uid://bly75lwqfftc4" path="res://lightning_bolt.gd" id="1_47df3"]
+[ext_resource type="Texture2D" uid="uid://c3i20vrm8a7rx" path="res://Lightning bolt.png" id="1_tx5fy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vlew8"]
+radius = 22.0
+height = 80.0
+
+[node name="Lightning_bolt" type="Area2D" unique_id=241654576]
+script = ExtResource("1_47df3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1004875140]
+shape = SubResource("CapsuleShape2D_vlew8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=50919983]
+position = Vector2(-0.49999976, -1.4999998)
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("1_tx5fy")

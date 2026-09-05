@@ -3,6 +3,7 @@ extends Control
 @onready var points_label: Label = $Points
 @onready var pistol_button: Button = $Pistol/Pistol_button
 @onready var shotgun_button: Button = $Shotgun/Shotgun_button
+@onready var upgrade_button: Button = $Upgrade
 
 func click_sound():
 	var click = Global.get_node("click moment")
@@ -32,6 +33,16 @@ func update_shop_ui():
 		else:
 			shotgun_button.text = "Equip"
 			shotgun_button.disabled = false
+			
+		upgrade_button.visible=true
+		if Points.shotgun_upgraded:
+			upgrade_button.text = "Max Upgraded"
+			upgrade_button.disabled = true
+		else:
+			upgrade_button.text = "Upgrade (100 pts)"
+			upgrade_button.disabled = false
+	else:
+		upgrade_button.visible = false
 
 
 
@@ -53,8 +64,8 @@ func _on_shotgun_button_pressed() -> void:
 	if "Shotgun" in Points.unlocked_weapon:
 		Points.equipped_weapon = "Shotgun"
 	else:
-		if Points.points >= 300:
-			Points.points -= 300
+		if Points.points >= 50:
+			Points.points -= 50
 			Points.unlocked_weapon.append("Shotgun")
 			Points.equipped_weapon = "Shotgun"
 		else:
@@ -68,3 +79,12 @@ func _on_pistol_button_pressed() -> void:
 	Points.equipped_weapon = "Pistol"
 	click_sound()
 	update_shop_ui()
+
+
+func _on_upgrade_pressed() -> void:
+	if not Points.shotgun_upgraded and Points.points >=100:
+		Points.points -= 100
+		Points.shotgun_upgraded = true
+		update_shop_ui()
+	else:
+		print("you cant upgrade lol loser")
